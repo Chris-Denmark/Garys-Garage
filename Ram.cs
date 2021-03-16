@@ -2,7 +2,7 @@ using System;
 
 namespace GaryGarage
 {
-  public class Ram : Vehicle // Gas powered truck
+  public class Ram : Vehicle, IGasVehicles // Gas powered truck
   {
     public double FuelCapacity { get; set; }
     public double CurrentTankPercentage { get; set; }
