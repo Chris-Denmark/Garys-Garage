@@ -1,6 +1,6 @@
 namespace GaryGarage
 {
-  public interface IElectricVehicle
+  public interface IElectricVehicles
   {
     double BatteryKWh { get; set; }
     double CurrentChargePercentage { get; set; }
