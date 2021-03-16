@@ -1,25 +1,30 @@
 using System;
-public class Zero : Vehicle // Electric motorcycle
+
+namespace GaryGarage
 {
-  public double BatteryKWh { get; set; }
-
-  public void ChargeBattery()
+  public class Zero : Vehicle, IElectricVehicles // Electric motorcycle
   {
-    // method definition omitted
-  }
+    public double BatteryKWh { get; set; }
+    public double CurrentChargePercentage { get; set; }
 
-  public override void Drive()
-  {
-    Console.WriteLine($"The {MainColor} Zero zips past. Whooooosh!");
-  }
+    public void ChargeBattery()
+    {
+      CurrentChargePercentage = 100;
+    }
 
-  public override void Turn(string direction)
-  {
-    Console.WriteLine($"The bike quickly swerves {direction}.");
-  }
+    public override void Drive()
+    {
+      Console.WriteLine($"The {MainColor} Zero zips past. Whooooosh!");
+    }
 
-  public override void Stop()
-  {
-    Console.WriteLine($"The {this.MainColor} bike quickly squeals to a stop!");
+    public override void Turn(string direction)
+    {
+      Console.WriteLine($"The bike quickly swerves {direction}.");
+    }
+
+    public override void Stop()
+    {
+      Console.WriteLine($"The {this.MainColor} bike quickly squeals to a stop!");
+    }
   }
 }
