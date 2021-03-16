@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GaryGarage
 {
@@ -10,23 +11,23 @@ namespace GaryGarage
       Zero fx = new Zero();
       Tesla modelS = new Tesla();
 
-      List <???> electricVehicles = new List<???> () {
+      List<IElectricVehicles> electricVehicles = new List<IElectricVehicles>() {
         fx, fxs, modelS
             };
 
       Console.WriteLine("Electric Vehicles");
-      foreach (??? ev in electricVehicles)
+      foreach (IElectricVehicles ev in electricVehicles)
       {
         Console.WriteLine($"{ev.CurrentChargePercentage}");
       }
 
-      foreach (??? ev in electricVehicles)
+      foreach (IElectricVehicles ev in electricVehicles)
       {
         // This should charge the vehicle to 100%
         ev.ChargeBattery();
       }
 
-      foreach (??? ev in electricVehicles)
+      foreach (IElectricVehicles ev in electricVehicles)
       {
         Console.WriteLine($"{ev.CurrentChargePercentage}");
       }
@@ -36,23 +37,23 @@ namespace GaryGarage
       Ram ram = new Ram();
       Cessna cessna150 = new Cessna();
 
-      List <???> gasVehicles = new List<???> () {
+      List<IGasVehicles> gasVehicles = new List<IGasVehicles>() {
         ram, cessna150
             };
 
       Console.WriteLine("Gas Vehicles");
-      foreach (??? gv in gasVehicles)
+      foreach (IGasVehicles gv in gasVehicles)
       {
         Console.WriteLine($"{gv.CurrentTankPercentage}");
       }
 
-      foreach (??? gv in gasVehicles)
+      foreach (IGasVehicles gv in gasVehicles)
       {
         // This should completely refuel the gas tank
         gv.RefuelTank();
       }
 
-      foreach (??? gv in gasVehicles)
+      foreach (IGasVehicles gv in gasVehicles)
       {
         Console.WriteLine($"{gv.CurrentTankPercentage}");
       }
