@@ -1,25 +1,30 @@
 using System;
-public class Ram : Vehicle // Gas powered truck
+
+namespace GaryGarage
 {
-  public double FuelCapacity { get; set; }
-
-  public void RefuelTank()
+  public class Ram : Vehicle // Gas powered truck
   {
-    // method definition omitted
-  }
+    public double FuelCapacity { get; set; }
+    public double CurrentTankPercentage { get; set; }
 
-  public override void Drive()
-  {
-    Console.WriteLine($"The {MainColor} Ram drives past. Rrrrrrruuummmmmbbblleeeee!");
-  }
+    public void RefuelTank()
+    {
+      CurrentTankPercentage = 100;
+    }
 
-  public override void Turn(string direction)
-  {
-    Console.WriteLine($"The truck quickly swerves {direction}.");
-  }
+    public override void Drive()
+    {
+      Console.WriteLine($"The {MainColor} Ram drives past. Rrrrrrruuummmmmbbblleeeee!");
+    }
 
-  public override void Stop()
-  {
-    Console.WriteLine($"The {this.MainColor} Ram quickly squeals to a stop!");
+    public override void Turn(string direction)
+    {
+      Console.WriteLine($"The truck quickly swerves {direction}.");
+    }
+
+    public override void Stop()
+    {
+      Console.WriteLine($"The {this.MainColor} Ram quickly squeals to a stop!");
+    }
   }
 }
